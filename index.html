@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+  <meta name="theme-color" content="#185a9d" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.8, user-scalable=no">
+	 <title>Untitled</title>
+	 <meta charset="UTF-8"/>
+  <style>
+   div{
+font-size:60px;
+background-color:lightBlue;
+color:#0073ff;
+}
+  </style>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+ var app=angular.module("myApp",[]);
+ app.controller("myCtrl",
+ function($scope,$interval){
+var date=new Date();
+$scope.time=date.toLocaleTimeString();
+$interval(function(){
+var date=new Date();
+$scope.time=date.toLocaleTimeString();
+},1000);
+
+}
+
+ );
+</script>
+ 
+  
+  <body ng-app="myApp" ng-controller="myCtrl">
+ <div><center>{{time}}</center></div>
+   </body>
+ </html>
